@@ -112,6 +112,10 @@ apt autoremove
 apt install -y neovim fish discord alacritty exa gh slack-desktop
 flatpack install --non-interactive spotify
 
+# Install and build Git libsecret auth
+apt install -y libsecret-1-0 libsecret-1-dev
+make -C /usr/share/doc/git/contrib/credential/libsecret
+
 # Install rust-lang + tools
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -yq --no-modify-path
 
