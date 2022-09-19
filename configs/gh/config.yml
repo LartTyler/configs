@@ -1,0 +1,14 @@
+git_protocol: https
+editor:
+prompt: enabled
+pager:
+
+aliases:
+  co: pr checkout
+  pv: pr view --web
+  rv: repo view --web
+  pro: '!gh pr create -B "$1" -t "Merge "$(git branch --show-current)" into $1" -d && gh prm'
+  prm: '!gh pr view --json url,headRefName -t "@here Review requested for \`{{.headRefName}}\`: {{.url}}" | xclip -selection clipboard && echo "Review request message copied to clipboard"'
+  promain: '!gh pro "main" && gh prm'
+
+http_unix_socket:
