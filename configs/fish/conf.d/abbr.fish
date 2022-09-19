@@ -6,7 +6,7 @@ abbr -a xp 'xclip -o -selection clipboard'
 
 abbr -a ls exa
 abbr -a ll 'exa -la'
-abbr -a lt 'exa -laT'
+abbr -a lt 'exa -laT -I .git'
 
 abbr -a ca cargo
 abbr -a cal 'cargo clippy'
