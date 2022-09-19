@@ -112,6 +112,10 @@ apt autoremove
 apt install -y neovim fish discord alacritty exa gh slack-desktop
 flatpack install --non-interactive spotify
 
+# Install pip and python packages
+curl -s https://bootstrap.pypa.io/get-pip.py | python3
+pip install gdown
+
 # Install and build Git libsecret auth
 apt install -y libsecret-1-0 libsecret-1-dev
 make -C /usr/share/doc/git/contrib/credential/libsecret
@@ -126,6 +130,7 @@ chmod +x ~/.local/bin/rust-analyzer
 ~/.cargo/bin/cargo install proximity-sort
 
 runuser -u "$user_name" -c './do_configs.sh'
+runuser -u "$user_name" -c './do_assets.sh'
 
 # Enable pop-shell tiling mode
 dconf write /org/gnome/mutter/edge-tiling false

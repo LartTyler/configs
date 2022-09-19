@@ -1,0 +1,6 @@
+[Unit]
+Description = Change desktop background to a random image in %h/Pictures/backgrounds
+
+[Service]
+Type = oneshot
+ExecStart = %h/.local/bin/rotate-background.sh
