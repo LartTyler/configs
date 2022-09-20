@@ -1,5 +1,5 @@
 [Unit]
-Description = Change desktop background to a random image in %h/Pictures/backgrounds
+Description = Change desktop background to a random image in %h/Pictures/Backgrounds
 
 [Service]
 Type = oneshot

@@ -7,7 +7,7 @@ if [[ `gsettings get org.gnome.desktop.interface color-scheme` = *"dark"* ]]; th
 fi
 
 current_file_name=`gsettings get org.gnome.desktop.background "$background_key" | xargs basename`
-backgrounds_dir="$HOME/Pictures/backgrounds"
+backgrounds_dir="$HOME/Pictures/Backgrounds"
 
 next_file_path=`fdfind -tf -ejpg -epng -E "$current_file_name" --search-path "$backgrounds_dir" | shuf -n1`
 
