@@ -5,6 +5,7 @@ BROWSER=firefox
 # PATH settings
 PATH DEFAULT=${PATH}:@{HOME}/.cargo/bin
 PATH DEFAULT=${PATH}:@{HOME}/.local/bin
+PATH DEFAULT=${PATH}:@{HOME}/.npm-packages/bin
 
 # Rust options
 CARGO_TARGET_DIR DEFAULT=@{HOME}/.cargo-target

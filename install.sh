@@ -4,29 +4,14 @@ function usage() {
 	echo "sudo $0 [options]"
 	echo
 	echo "Options:"
-	echo "    --user, -u"
-	echo "        Sets the user that this installer should run for. Defaults to the"
-	echo "        user identified by invoking \`logname\`."
-	echo
-	echo "    --group, -g"
-	echo "        Sets the user's primary group. Mostly used for properly setting"
-	echo "        file ownership. If not specified, will assume it should be the"
-	echo "        same as the \`--user\` option."
-	echo
 	echo "    --confirm, -y"
 	echo "        Do not prompt for input or confirmations."
-	echo
-	echo "    --home-dir"
-	echo "        Sets the path to the user's home directory. Defaults to"
-	echo "        '/home/USER' where 'USER' is the value of the \`--user\` option."
 	echo
 	echo "    --help, -h"
 	echo "        Prints this usage message."
 }
 
 user_name="$(logname)"
-user_group=""
-home_dir=""
 no_interact=""
 
 while [[ $# > 0 ]]; do
@@ -34,26 +19,8 @@ while [[ $# > 0 ]]; do
 	shift
 
 	case "$item" in
-		--user|-u)
-			user_name="$1"
-			shift
-
-			;;
-
-		--group|-g)
-			user_group="$1"
-			shift
-
-			;;
-
 		--confirm|-y)
 			no_interact="no_interact"
-
-			;;
-
-		--home-dir)
-			home_dir="$1"
-			shift
 
 			;;
 
@@ -82,15 +49,11 @@ if [[ -z "$user_group" ]]; then
 	user_group="$user_name"
 fi
 
-if [[ -z "$home_dir" ]]; then
-	home_dir="/home/$user_name"
-fi
-
 if [[ -z "$no_interact" ]]; then
 	echo "Installing software and configurations for the following user:"
 	echo "  Name: ${user_name}"
 	echo "  Primary Group: ${user_group}"
-	echo "  Home Directory: ${home_dir}"
+	echo "  Home Directory: ${HOME}"
 	echo
 	read -p "Is this correct? (y/N) " -r
 
@@ -109,8 +72,15 @@ apt update
 apt upgrade -y
 apt autoremove
 
-apt install -y neovim fish discord alacritty exa gh slack-desktop
+apt install -y neovim fish discord alacritty exa gh slack-desktop nodejs
 flatpack install --non-interactive spotify
+
+# Configure NPM to install global packages to the user
+mkdir "$HOME"/.npm-packages
+npm config set prefix "$HOME"/.npm-packages
+
+# Install global NPM packages
+npm install --global yarn
 
 # Install pip and python packages
 curl -s https://bootstrap.pypa.io/get-pip.py | python3
