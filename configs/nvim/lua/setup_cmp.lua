@@ -6,9 +6,9 @@ cmp.setup({
 			vim.fn["vsnip#anonymous"](args.body)
 		end,
 	},
-	mapping = {
+	mapping = cmp.mapping.preset.insert({
 		['<Tab>'] = cmp.mapping.confirm({ select = true }),
-	},
+	}),
 	sources = cmp.config.sources({
 		{ name = 'nvim_lsp' },
 	}, {}),
