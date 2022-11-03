@@ -5,6 +5,9 @@ call plug#begin()
 " Baseline
 Plug 'tpope/vim-sensible'
 
+" Libraries
+Plug 'nvim-lua/plenary.nvim'
+
 " GUI improvements
 Plug 'itchyny/lightline.vim'
 Plug 'andymass/vim-matchup'
@@ -35,6 +38,7 @@ Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'junegunn/goyo.vim', { 'for': 'markdown' }
 Plug 'junegunn/limelight.vim', { 'for': 'markdown' }
+Plug 'saecki/crates.nvim', { 'tag': 'v0.3.0' }
 
 " Color scheme
 Plug 'sickill/vim-monokai', { 'as': 'monokai' }
