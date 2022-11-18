@@ -106,5 +106,8 @@ runuser -u "$user_name" -c './do_assets.sh'
 gsettings set org.gnome.mutter.edge-tiling false
 gsettings set org.gnome.shell.extensions.pop-shell.tile-by-default true
 
+# Enable night light
+gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
+
 # Finish editing Gnome settings
 killall -SIGQUIT gnome-shell
