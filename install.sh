@@ -103,6 +103,8 @@ runuser -u "$user_name" -c './do_configs.sh'
 runuser -u "$user_name" -c './do_assets.sh'
 
 # Enable pop-shell tiling mode
-dconf write /org/gnome/mutter/edge-tiling false
-dconf write /org/gnome/shell/extensions/pop-shell/tile-by-default true
+gsettings set org.gnome.mutter.edge-tiling false
+gsettings set org.gnome.shell.extensions.pop-shell.tile-by-default true
+
+# Finish editing Gnome settings
 killall -SIGQUIT gnome-shell
