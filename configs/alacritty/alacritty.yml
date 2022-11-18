@@ -28,9 +28,9 @@ scrolling:
 #   - (Linux/BSD) user login shell
 #   - (Windows) powershell
 shell:
-  program: /bin/fish
+  program: /usr/bin/tmux
   args:
-    - --login
+    - new-session
 
 # Bell
 #

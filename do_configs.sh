@@ -8,6 +8,9 @@ log_start_region "Installing configs..."
 cp configs/.pam_environment "$HOME/.pam_environment"
 log_region_item "./configs/.pam_environment => $HOME/.pam_environment"
 
+cp configs/.tmux.conf "$HOME/.tmux.conf"
+log_region_item "./configs/.tmux.conf => $HOME/.tmux.conf"
+
 # Full config dirs, that should be placed in $HOME/.config as-is
 config_names=(alacritty fish git gh nvim)
 config_dir="${XDG_DATA_HOME:-$HOME/.config}"

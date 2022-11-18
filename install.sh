@@ -72,7 +72,7 @@ apt update
 apt upgrade -y
 apt autoremove
 
-apt install -y neovim fish discord alacritty exa gh slack-desktop nodejs
+apt install -y neovim fish discord alacritty exa gh slack-desktop nodejs tmux
 flatpack install --non-interactive spotify
 
 # Configure NPM to install global packages to the user
