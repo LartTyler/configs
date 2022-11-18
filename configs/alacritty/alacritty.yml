@@ -14,6 +14,7 @@ import:
   - ~/.config/alacritty/theme.yml
   - ~/.config/alacritty/keybinds.yml
 
+# Disable scroll history: tmux will take care ofthat
 scrolling:
   history: 0
 
