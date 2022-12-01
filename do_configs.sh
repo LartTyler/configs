@@ -5,9 +5,6 @@ source ./functions.sh
 log_start_region "Installing configs..."
 
 # Simple / single file configurations
-cp configs/.pam_environment "$HOME/.pam_environment"
-log_region_item "./configs/.pam_environment => $HOME/.pam_environment"
-
 cp configs/.tmux.conf "$HOME/.tmux.conf"
 log_region_item "./configs/.tmux.conf => $HOME/.tmux.conf"
 
