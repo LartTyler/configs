@@ -80,7 +80,7 @@ mkdir "$HOME"/.npm-packages
 npm config set prefix "$HOME"/.npm-packages
 
 # Install global NPM packages
-npm install --global yarn
+npm install --global yarn vscode-langservers-extracted
 
 # Install pip and python packages
 curl -s https://bootstrap.pypa.io/get-pip.py | python3
