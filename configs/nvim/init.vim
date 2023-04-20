@@ -39,6 +39,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'junegunn/goyo.vim', { 'for': 'markdown' }
 Plug 'junegunn/limelight.vim', { 'for': 'markdown' }
 Plug 'saecki/crates.nvim', { 'tag': 'v0.3.0' }
+Plug 'mracos/mermaid.vim'
 
 " Color scheme
 Plug 'sickill/vim-monokai', { 'as': 'monokai' }
