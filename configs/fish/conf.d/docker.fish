@@ -1,15 +1,23 @@
-# General Docker abbreviations
-abbr -a dc 'sudo docker-compose'
-abbr -a dce 'sudo docker-compose exec'
-abbr -a dcu 'sudo docker-compose up -d'
-abbr -a dcl 'sudo docker-compose logs'
-abbr -a dcs 'sudo docker-compose stop'
+# General docker abbreviations
+set -l prefix 'sudo docker run -it --user (id -u)'
+abbr -a dr -f "$prefix"
+
+# Abbreviations for composer
+set -l prefix "$prefix -v (pwd):/app composer:2 composer"
+abbr -a composer "$prefix"
+abbr -a co "$prefix"
+
+# General docker-compose abbreviations
+set -l prefix 'sudo docker-compose'
+abbr -a dc "$prefix"
+abbr -a dce "$prefix exec"
+abbr -a dcu "$prefix up -d"
+abbr -a dcl "$prefix logs"
+abbr -a dcs "$prefix stop"
 
 # Abbreviations for Symfony applications running within a Docker container
-set -l prefix 'sudo docker-compose exec php'
+set -l prefix "$prefix exec php"
 
-abbr -a composer "$prefix composer"
-abbr -a co "$prefix composer"
 abbr -a symfony "$prefix bin/console"
 abbr -a sym "$prefix bin/console"
 abbr -a php "$prefix php"
