@@ -1,11 +1,16 @@
 # General docker abbreviations
-set -l prefix 'sudo docker run -it --user (id -u)'
-abbr -a dr -f "$prefix"
+set -l run_prefix 'sudo docker run -it --user (id -u)'
+abbr -a dr -f "$run_prefix"
 
-# Abbreviations for composer
-set -l prefix "$prefix -v (pwd):/app composer:2 composer"
+# Abbreviations for composer 2
+set -l prefix "$run_prefix -v (pwd):/app composer:2 composer"
 abbr -a composer "$prefix"
 abbr -a co "$prefix"
+
+# Abbreviations for composer 1
+set -l prefix "$run_prefix -v (pwd):/app composer:1 composer"
+abbr -a composer1 "$prefix"
+abbr -a co1 "$prefix"
 
 # General docker-compose abbreviations
 set -l prefix 'sudo docker-compose'
