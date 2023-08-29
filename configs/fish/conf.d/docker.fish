@@ -13,7 +13,7 @@ abbr -a composer1 "$prefix"
 abbr -a co1 "$prefix"
 
 # General docker-compose abbreviations
-set -l prefix 'sudo docker-compose'
+set -l prefix 'sudo docker compose'
 abbr -a dc "$prefix"
 abbr -a dce "$prefix exec"
 abbr -a dcu "$prefix up -d"
