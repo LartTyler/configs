@@ -40,7 +40,7 @@ if [[ `id -u` != 0 ]]; then
 	echo "This script should be invoked by using \`sudo\`, as the user you wish to"
 	echo "perform the installation for."
 	echo
-	
+
 	usage
 	exit 1
 fi
@@ -53,7 +53,6 @@ if [[ -z "$no_interact" ]]; then
 	echo "Installing software and configurations for the following user:"
 	echo "  Name: ${user_name}"
 	echo "  Primary Group: ${user_group}"
-	echo "  Home Directory: ${HOME}"
 	echo
 	read -p "Is this correct? (y/N) " -r
 
@@ -90,13 +89,13 @@ apt install -y libsecret-1-0 libsecret-1-dev
 make -C /usr/share/doc/git/contrib/credential/libsecret
 
 # Install rust-lang + tools
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -yq --no-modify-path
+runuser -u "$user_name" curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -yq --no-modify-path
 
-~/.cargo/bin/rustup component add rust-analyzer
-~/.cargo/bin/cargo install proximity-sort
+runuser -u "$user_name" ~/.cargo/bin/rustup component add rust-analyzer
+runuser -u "$user_name" ~/.cargo/bin/cargo install proximity-sort
 
-runuser -u "$user_name" -c './do_configs.sh'
-runuser -u "$user_name" -c './do_assets.sh'
+runuser -u "$user_name" './do_configs.sh'
+runuser -u "$user_name" './do_assets.sh'
 
 # Enable pop-shell tiling mode
 gsettings set org.gnome.mutter.edge-tiling false
