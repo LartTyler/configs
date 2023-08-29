@@ -98,11 +98,11 @@ runuser -u "$user_name" './do_configs.sh'
 runuser -u "$user_name" './do_assets.sh'
 
 # Enable pop-shell tiling mode
-gsettings set org.gnome.mutter.edge-tiling false
-gsettings set org.gnome.shell.extensions.pop-shell.tile-by-default true
+gsettings set org.gnome.mutter edge-tiling false
 
-# Enable night light
-gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
+gsettings set org.gnome.shell.extensions.pop-shell tile-by-default true
+gsettings set org.gnome.shell.extensions.pop-shell gap-inner 0
+gsettings set org.gnome.shell.extensions.pop-shell gap-outer 0
 
 # Finish editing Gnome settings
 killall -SIGQUIT gnome-shell
