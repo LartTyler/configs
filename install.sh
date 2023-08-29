@@ -72,8 +72,7 @@ apt update
 apt upgrade -y
 apt autoremove
 
-apt install -y neovim fish discord alacritty exa gh slack-desktop nodejs tmux
-flatpack install --non-interactive spotify
+apt install -y neovim fish discord alacritty exa gh slack-desktop nodejs tmux spotify-client
 
 # Configure NPM to install global packages to the user
 mkdir "$HOME"/.npm-packages
