@@ -11,7 +11,7 @@ Plug 'nvim-lua/plenary.nvim'
 " GUI improvements
 Plug 'itchyny/lightline.vim'
 Plug 'andymass/vim-matchup'
-Plug 'j-hui/fidget.nvim'
+Plug 'j-hui/fidget.nvim', { 'tag': 'legacy' }
 
 " Fuzzy finder
 Plug 'airblade/vim-rooter'
