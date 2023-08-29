@@ -71,7 +71,9 @@ apt update
 apt upgrade -y
 apt autoremove
 
-apt install -y neovim fish discord alacritty exa gh slack-desktop nodejs tmux spotify-client
+apt install -y neovim fish discord alacritty exa gh slack-desktop nodejs tmux \
+	spotify-client docker-ce docker-ce-cli containerd.io docker-buildx-plugin \
+	docker-compose-plugin
 
 # Configure NPM to install global packages to the user
 mkdir "$HOME"/.npm-packages
